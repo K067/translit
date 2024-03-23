@@ -1,47 +1,34 @@
-const transliter = text => {
-    const ref = {
-        'а': 'a',
-        'б': 'b',
-        'в': 'v',
-        'г': 'g',
-        'д': 'd',
-        'е': 'e',
-        'з': 'z',
-        'и': 'i',
-        'к': 'k',
-        'л': 'l',
-        'м': 'm',
-        'н': 'n',
-        'о': 'o',
-        'п': 'p',
-        'р': 'r',
-        'с': 's',
-        'т': 't',
-        'у': 'u',
-        'ф': 'f',
-        'х': 'kh',
-        'ж': 'ž',
-        'ё': 'jo',
-        'й': 'j',
-        'ц': 'c',
-        'ч': 'č',
-        'ш': 'š',
-        'щ': 'šč',
-        'ъ': `"`,
-        'ы': 'y',
-        'ь': `'`,
-        'ю': 'ju',
-        'я': 'ja'
+import data from "./data.js";
+import build from "./build.js";
+
+const transliter = () => {
+    const input = document.querySelector('.trn-field');
+    const btn = document.querySelector('.trn-btn');
+
+    const send = translate => {
+        if (input.value !== '') {
+            build(input.value, translate);
+
+            input.value = '';
+        }
     };
 
-    // const splitter=word=>{
+    btn.addEventListener('click', () => {
+        send(input.value.replace(/[А-Яа-я]/gi, s => data[s]).trim());
+    })
 
-    // }
+    input.addEventListener('keypress', e => {
+        if (e.key === 'Enter') {
+            send(input.value.replace(/[А-Яа-я]/gi, s => data[s]).trim());
+        }
+    })
 
-    let string = text.toLowerCase().replace(/[А-Яа-я]/gi, s => ref[s]);
 
-    console.log(text.split(/\s/).reduce((l, w) => l += w.slice(0, 1), ''));
-    console.log(string.split(/\s/).reduce((l, w) => l += w.slice(0, 1), ''));
+    //alternative for capitalized failed.
+    // let beta = text.split(" ");
+    // let alpha = string.split(" ");
+    // console.log(text.split(/\s/).reduce((l, w) => l += w.slice(0, 1), ''));
+    // console.log(string.split(/\s/).reduce((l, w) => l += w.slice(0, 1), ''));
 }
 
 export default transliter;
