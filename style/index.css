@@ -157,3 +157,10 @@ input:focus {
     letter-spacing: -0.7px;
     font-size: 14px;
 }
+
+@media(max-width:500px) {
+    .container {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
