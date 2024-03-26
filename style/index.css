@@ -24,12 +24,54 @@ li {
     display: flex;
     align-items: center;
     padding: 11px;
-    list-style-type: decimal;
-    gap: 28px;
+    width: 50%;
+    border-bottom: solid 1px #111;
+}
+
+
+li:nth-child(odd) {
+    background-color: #F0F0F0;
+}
+
+li:nth-child(even) {
+    background-color: #adadad89;
+    border-left: solid 2px #111;
+    justify-content: space-between;
+}
+
+.list li:first-child {
+    border-top: none;
+    border-radius: 8px 0 0 0;
+}
+
+.list li:nth-child(2) {
+    border-top: none;
+    border-radius: 0 8px 0 0;
+}
+
+li:last-child {
+    border-radius: 0 0 8px 0;
+    border-top: solid 1px #111;
+    border-bottom: none;
+}
+
+li:nth-last-child(2) {
+    border-radius: 0 0 0 8px;
+    border-top: solid 1px #111;
+    border-bottom: none;
+}
+
+li:nth-last-child(3) {
+    border-bottom: none;
+}
+
+li:nth-last-child(4) {
+    border-bottom: none;
 }
 
 img {
     cursor: pointer;
+    width: 18px;
 }
 
 span {
@@ -106,27 +148,12 @@ input:focus {
     justify-content: center;
 }
 
-.list-orgn {
-    border-right: solid 1px black;
-    border-radius: 8px 0px 0px 8px;
-    background-color: #F0F0F0;
-    width: 50%;
-}
-
-.list-trns {
-    background-color: #adadad89;
-    border-left: solid 1px black;
-    border-radius: 0px 8px 8px 0px;
-    width: 50%;
-}
-
-.list-trns li {
+.list {
     display: flex;
-    justify-content: space-between;
-}
-
-.list-trns li img {
-    width: 18px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    border-radius: 8px;
 }
 
 .btn-clear {
@@ -149,6 +176,10 @@ input:focus {
 .btn-clear span {
     color: #0f0f0f;
     letter-spacing: -0.9px;
+}
+
+.span {
+    margin-left: 25px
 }
 
 .key,

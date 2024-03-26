@@ -4,7 +4,6 @@ const build = (origin, translate, key) => {
     const alpha = document.querySelector('.list-orgn');
     const beta = document.querySelector('.list-trns');
 
-
     alpha.innerHTML +=
         `<li>
     <span class="key">${key}</span>
