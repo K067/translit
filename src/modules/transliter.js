@@ -1,31 +1,39 @@
 import data from "./data.js";
 import build from "./build.js";
-
+import clear from "./clear.js";
 const transliter = () => {
     const input = document.querySelector('input');
     const btn = document.querySelector('.btn-input');
 
     let key = 2;
 
-    const send = translate => {
+    const control = translate => {
         if (input.value !== '') {
-            key++;
             build(input.value, translate, key);
-
 
             input.value = '';
         }
+
+        Array.from(document.querySelectorAll('#delete')).forEach(elem => {
+            elem.addEventListener('click', e => {
+                clear(e.target);
+                key--;
+            })
+        })
     };
 
     btn.addEventListener('click', () => {
-        send(input.value.replace(/[А-Яа-я]/gi, s => data[s]).trim());
-        console.log(key);
+        control(input.value.replace(/[А-Яа-я]/gi, s => data[s]).trim());
+
+        key++;
     })
 
     input.addEventListener('keypress', e => {
         if (e.key === 'Enter') {
-            send(input.value.replace(/[А-Яа-я]/gi, s => data[s]).trim());
+            control(input.value.replace(/[А-Яа-я]/gi, s => data[s]).trim());
         }
+
+        key++;
     })
 
 
