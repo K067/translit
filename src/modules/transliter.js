@@ -9,9 +9,9 @@ const transliter = () => {
 
     const send = translate => {
         if (input.value !== '') {
+            key++;
             build(input.value, translate, key);
 
-            key++
 
             input.value = '';
         }
@@ -19,6 +19,7 @@ const transliter = () => {
 
     btn.addEventListener('click', () => {
         send(input.value.replace(/[А-Яа-я]/gi, s => data[s]).trim());
+        console.log(key);
     })
 
     input.addEventListener('keypress', e => {
@@ -26,6 +27,7 @@ const transliter = () => {
             send(input.value.replace(/[А-Яа-я]/gi, s => data[s]).trim());
         }
     })
+
 
 
     //alternative for capitalized failed.
