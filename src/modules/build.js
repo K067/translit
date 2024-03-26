@@ -1,15 +1,21 @@
-const build = (origin, translate) => {
-    const alpha = document.querySelector('.alpha');
-    const beta = document.querySelector('.beta');
+import clear from "./clear.js";
 
-    const pAlpha = document.createElement('p');
-    const pBeta = document.createElement('p');
+const build = (origin, translate, key) => {
+    const alpha = document.querySelector('.list-orgn');
+    const beta = document.querySelector('.list-trns');
 
-    pBeta.textContent = translate;
-    pAlpha.textContent = origin;
 
-    alpha.appendChild(pAlpha);
-    beta.appendChild(pBeta);
+    alpha.innerHTML +=
+        `<li>
+    <span class="key">${key}</span>
+    <span class="span">${origin}</span>
+    </li>`;
+
+    beta.innerHTML +=
+        `<li>
+    <span class="span">${translate}</span>
+    <img id="delete" src="./img/icon/delete.svg" alt="delete">
+    </li>`
 }
 
 export default build;

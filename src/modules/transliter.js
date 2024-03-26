@@ -2,12 +2,16 @@ import data from "./data.js";
 import build from "./build.js";
 
 const transliter = () => {
-    const input = document.querySelector('.trn-field');
-    const btn = document.querySelector('.trn-btn');
+    const input = document.querySelector('input');
+    const btn = document.querySelector('.btn-input');
+
+    let key = 2;
 
     const send = translate => {
         if (input.value !== '') {
-            build(input.value, translate);
+            build(input.value, translate, key);
+
+            key++
 
             input.value = '';
         }
