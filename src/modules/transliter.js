@@ -1,6 +1,7 @@
 import data from "./data.js";
 import build from "./build.js";
 import clear from "./clear.js";
+
 const transliter = () => {
     const input = document.querySelector('input');
     const btn = document.querySelector('.btn-input');
@@ -17,13 +18,16 @@ const transliter = () => {
         Array.from(document.querySelectorAll('#delete')).forEach(elem => {
             elem.addEventListener('click', e => {
                 clear(e.target);
+
                 key--;
+                console.log(key);
             })
         })
     };
 
     btn.addEventListener('click', () => {
         control(input.value.replace(/[А-Яа-я]/gi, s => data[s]).trim());
+        console.log(key);
 
         key++;
     })
