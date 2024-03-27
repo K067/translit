@@ -72,10 +72,10 @@ input:focus {
 }
 
 .btn-input {
+    padding: 5px 12px 5px 12px;
     background-color: #111;
     color: #fff;
     border-radius: 8px;
-    padding: 0 12px 4px;
 }
 
 .input-group {
@@ -143,7 +143,7 @@ input:focus {
 }
 
 .add .tooltip {
-    top: 6px;
+    top: -34px;
     left: 34px;
     visibility: hidden;
     position: absolute;
@@ -203,7 +203,7 @@ input:focus {
 }
 
 .span {
-    margin-left: 25px;
+    margin-left: 15px;
     text-overflow: ellipsis;
     overflow: hidden;
     width: 90px;
