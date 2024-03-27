@@ -135,6 +135,8 @@ input:focus {
     line-height: 1.25;
     letter-spacing: -0.48px;
     text-align: left;
+    max-width: 211px;
+    word-wrap: break-word;
 }
 
 .li:hover .tooltip {
