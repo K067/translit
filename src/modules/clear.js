@@ -1,16 +1,20 @@
 const clear = e => {
     const list = e.parentElement.parentElement;
-    const def = document.querySelectorAll('.def .li');
 
-    def[0].style = null;
-    def[1].style = null;
+    let numRemove = list.querySelector('.key').innerHTML;
+    let numAll = document.querySelectorAll('.key');
 
-    let countItems = document.querySelector(".list").childElementCount - 1;
+    numAll.forEach((e, i) => {
+        if (i > numRemove - 2)
+            numAll[i].innerHTML = i + 1;
+    })
+
+    if (document.querySelector(".list").childElementCount === 2) {
+        document.querySelectorAll('.def .li')[0].style = null;
+        document.querySelectorAll('.def .li')[1].style = null;
+    }
 
     list.remove();
-
-    console.log(countItems);
-
 }
 
 export default clear;

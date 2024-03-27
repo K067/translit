@@ -21,6 +21,9 @@ const transliter = () => {
     };
 
     document.querySelector('.btn-clear').addEventListener('click', () => {
+        document.querySelectorAll('.def .li')[0].style = null;
+        document.querySelectorAll('.def .li')[1].style = null;
+
         document.querySelectorAll('.add').forEach(e => {
             e.remove();
         });
@@ -34,16 +37,7 @@ const transliter = () => {
         if (e.key === 'Enter') {
             control(input.value.replace(/[А-Яа-я]/gi, s => data[s]).trim());
         }
-
     })
-
-
-
-    //alternative for capitalized failed.
-    // let beta = text.split(" ");
-    // let alpha = string.split(" ");
-    // console.log(text.split(/\s/).reduce((l, w) => l += w.slice(0, 1), ''));
-    // console.log(string.split(/\s/).reduce((l, w) => l += w.slice(0, 1), ''));
 }
 
 export default transliter;
