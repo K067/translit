@@ -121,11 +121,13 @@ input:focus {
 }
 
 .def .li:first-child {
-    border-radius: 8px 0 0 0;
+    border-radius: 8px 0 0 8px;
+    border: none;
 }
 
 .def .li:nth-child(2) {
-    border-radius: 0 8px 0 0;
+    border-radius: 0 8px 8px 0;
+    border: none;
 }
 
 .add:last-child .li:last-child {
@@ -163,11 +165,12 @@ input:focus {
 
 .li:nth-child(odd) {
     background-color: #F0F0F0;
+    border-right: solid 1px #111;
 }
 
 .li:nth-child(even) {
     background-color: #adadad89;
-    border-left: solid 2px #111;
+    border-left: solid 1px #111;
     justify-content: space-between;
 }
 
