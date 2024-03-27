@@ -4,7 +4,7 @@ const build = (origin, translate) => {
     let countItems = document.querySelector(".list").childElementCount + 1;
 
     list.innerHTML += `
-        <div class="li-wrapper">
+        <div class="li-wrapper add">
         <div class='li li-orgn'>
         ${origin.length > 7 ? `<span class="tooltip">${origin}</span>` : ''}
         <span class="key">${countItems}</span>
