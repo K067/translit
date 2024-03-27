@@ -6,30 +6,28 @@ const transliter = () => {
     const input = document.querySelector('input');
     const btn = document.querySelector('.btn-input');
 
-    let key = 2;
-
     const control = translate => {
         if (input.value !== '') {
-            build(input.value, translate, key);
+            build(input.value, translate);
 
             input.value = '';
         }
 
-        Array.from(document.querySelectorAll('#delete')).forEach(elem => {
+        Array.from(document.querySelectorAll('.delete')).forEach(elem => {
             elem.addEventListener('click', e => {
                 clear(e.target);
-
-                key--;
-                console.log(key);
             })
         })
     };
 
+    document.querySelector('.btn-clear').addEventListener('click', () => {
+        document.querySelectorAll('.add').forEach(e => {
+            e.remove();
+        });
+    })
+
     btn.addEventListener('click', () => {
         control(input.value.replace(/[А-Яа-я]/gi, s => data[s]).trim());
-        console.log(key);
-
-        key++;
     })
 
     input.addEventListener('keypress', e => {
@@ -37,7 +35,6 @@ const transliter = () => {
             control(input.value.replace(/[А-Яа-я]/gi, s => data[s]).trim());
         }
 
-        key++;
     })
 
 

@@ -1,10 +1,11 @@
 const clear = e => {
-    const list = e.parentElement;
-    const listSib = list.previousSibling.previousSibling
+    const list = e.parentElement.parentElement;
 
-    list.parentElement.removeChild(listSib);
-    list.parentElement.removeChild(list);
+    let countItems = document.querySelector(".list").childElementCount - 1;
 
+    list.remove();
+
+    console.log(countItems);
 
 }
 

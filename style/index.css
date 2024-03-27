@@ -20,53 +20,24 @@ ul {
     padding: 0;
 }
 
-li {
+.li {
     display: flex;
     align-items: center;
     padding: 11px;
     width: 50%;
     border-bottom: solid 1px #111;
+    max-height: 40px;
 }
 
 
-li:nth-child(odd) {
+.li:nth-child(odd) {
     background-color: #F0F0F0;
 }
 
-li:nth-child(even) {
+.li:nth-child(even) {
     background-color: #adadad89;
     border-left: solid 2px #111;
     justify-content: space-between;
-}
-
-.list li:first-child {
-    border-top: none;
-    border-radius: 8px 0 0 0;
-}
-
-.list li:nth-child(2) {
-    border-top: none;
-    border-radius: 0 8px 0 0;
-}
-
-li:last-child {
-    border-radius: 0 0 8px 0;
-    border-top: solid 1px #111;
-    border-bottom: none;
-}
-
-li:nth-last-child(2) {
-    border-radius: 0 0 0 8px;
-    border-top: solid 1px #111;
-    border-bottom: none;
-}
-
-li:nth-last-child(3) {
-    border-bottom: none;
-}
-
-li:nth-last-child(4) {
-    border-bottom: none;
 }
 
 img {
@@ -146,14 +117,17 @@ input:focus {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    min-height: 200px;
 }
 
 .list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     width: 100%;
     border-radius: 8px;
+}
+
+.li-wrapper {
+    display: flex;
+    flex-direction: row;
 }
 
 .btn-clear {
@@ -183,11 +157,12 @@ input:focus {
 }
 
 .key,
-.span {
+.key-def .span {
     color: #111;
 }
 
-.key {
+.key,
+.key-def {
     font-weight: 600;
     letter-spacing: -0.7px;
     font-size: 14px;
