@@ -5,12 +5,12 @@ const build = (origin, translate) => {
 
     list.innerHTML += `
         <div class="li-wrapper add">
-        <div class='li li-orgn'>
+        <div class='li'>
         ${origin.length > 7 ? `<span class="tooltip">${origin}</span>` : ''}
         <span class="key">${countItems}</span>
         <span class="span">${origin}</span>
         </div>
-        <div class='li li-trns'>
+        <div class='li'>
         ${origin.length > 7 ? `<span class="tooltip">${translate}</span>` : ''}
         <span class="span">${translate}</span>
         <img class="delete" src="./img/icon/delete.svg" alt="delete">
