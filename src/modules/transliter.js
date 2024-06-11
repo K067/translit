@@ -30,12 +30,12 @@ const transliter = () => {
     })
 
     btn.addEventListener('click', () => {
-        control(input.value.replace(/[А-Яа-я]/gi, s => data[s]).trim());
+        control(input.value.replace(/[А-ЯЂЉЊЋЏа-яђљњћџ]/gi, s => data[s]).trim());
     })
 
     input.addEventListener('keypress', e => {
         if (e.key === 'Enter') {
-            control(input.value.replace(/[А-Яа-я]/gi, s => data[s]).trim());
+            control(input.value.replace(/[А-ЯЂЉЊЋЏа-яђљњћџ]/gi, s => data[s]).trim());
         }
     })
 }
